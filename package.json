@@ -11,7 +11,7 @@
     "test": "xo && ava"
   },
   "files": [
-    "dist.js"
+    "build"
   ],
   "repository": {
     "type": "git",
