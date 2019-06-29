@@ -1,0 +1,72 @@
+{
+  "name": "ink-ui",
+  "version": "0.0.0",
+  "description": "Ink UI",
+  "main": "build",
+  "scripts": {
+    "build": "babel src -d build",
+    "prepublish": "npm run build",
+    "pretest": "npm run build",
+    "test": "xo && ava"
+  },
+  "files": [
+    "dist.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LitoMore/ink-ui.git"
+  },
+  "keywords": [
+    "ink-ui"
+  ],
+  "author": "LitoMore",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LitoMore/ink-ui/issues"
+  },
+  "homepage": "https://github.com/LitoMore/ink-ui#readme",
+  "dependencies": {
+    "log-symbols": "^3.0.0",
+    "prop-types": "^15.7.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@types/react": "^16.8.22",
+    "ava": "^2.1.0",
+    "babel-eslint": "^10.0.2",
+    "eslint-config-xo-react": "^0.19.0",
+    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-react-hooks": "^1.6.1",
+    "ink": "^2.3.0",
+    "ink-testing-library": "^1.0.2",
+    "react": "^16.8.6",
+    "xo": "^0.24.0"
+  },
+  "peerDependencies": {
+    "ink": ">=2.0.0",
+    "react": ">=16.8.0"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "babel": {
+    "presets": [
+      "@ava/stage-4",
+      "@babel/preset-react"
+    ]
+  },
+  "ava": {
+    "color": true,
+    "presets": [
+      "@babel/preset-react"
+    ]
+  },
+  "xo": {
+    "parser": "babel-eslint",
+    "extends": [
+      "xo-react"
+    ]
+  }
+}
