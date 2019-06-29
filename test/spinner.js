@@ -12,7 +12,7 @@ test('spinner', async t => {
 	await delay(dots.frames.length * dots.interval);
 	unmount();
 
-	const uniqueFrames = [...new Set(frames)];
+	const uniqueFrames = [...new Set(frames.filter(frame => frame !== '\n'))];
 
 	t.deepEqual(uniqueFrames, dots.frames);
 });
