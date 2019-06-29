@@ -5,6 +5,7 @@ Ink UI
 ## Components
 
 - [x] Symbol
+- [x] Spinner
 - [ ] Divider
 - [ ] Table
 - [ ] Input
