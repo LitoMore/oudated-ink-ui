@@ -15,4 +15,3 @@ render(
 		</Box>
 	</Box>
 );
-
