@@ -6,12 +6,12 @@ Ink UI
 
 - [x] Symbol
 - [x] Spinner
+- [x] Link
 - [ ] Divider
 - [ ] Table
 - [ ] Input
 - [ ] Select
 - [ ] Checkbox
-- [ ] Link
 
 ## License
 
