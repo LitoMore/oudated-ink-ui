@@ -1,43 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Text} from 'ink';
 import cliSpinners from 'cli-spinners';
+import useInterval from '../../utils/use-interval';
 
 const supportedTypes = Object.keys(cliSpinners);
 
-class Spinner extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {frame: 0};
-		this.updateFrame = this.updateFrame.bind(this);
-	}
+const Spinner = props => {
+	const [frame, setFrame] = useState(0);
+	const spinner = cliSpinners[props.type];
+	const {interval, frames} = spinner;
 
-	componentDidMount() {
-		const {type} = this.props;
-		this.timer = setInterval(this.updateFrame, cliSpinners[type].interval);
-	}
+	useInterval(() => {
+		setFrame((frame < frames.length - 1) ? frame + 1 : 0);
+	}, interval);
 
-	componentWillUnmount() {
-		clearInterval(this.timer);
-	}
-
-	updateFrame() {
-		const {type} = this.props;
-		const {frames} = cliSpinners[type];
-
-		this.setState(prevState => {
-			const nextFrame = (prevState.frame < frames.length - 1) ? prevState.frame + 1 : 0;
-			return {frame: nextFrame};
-		});
-	}
-
-	render() {
-		const {type} = this.props;
-		const {frame} = this.state;
-
-		return <Text>{cliSpinners[type].frames[frame]}</Text>;
-	}
-}
+	return <Text>{frames[frame]}</Text>;
+};
 
 Spinner.propTypes = {
 	type: PropTypes.oneOf(supportedTypes)
