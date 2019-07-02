@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Text} from 'ink';
-import cliSpinners from 'cli-spinners';
+import cliSpinners from 'cli-spinners/spinners';
 import useInterval from '../../utils/use-interval';
 
 const supportedTypes = Object.keys(cliSpinners);
